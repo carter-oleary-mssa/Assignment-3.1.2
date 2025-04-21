@@ -1,4 +1,4 @@
-﻿int[] years = { 2016, 2018 };
+﻿int[] years = { 2016, 2018, 2000, 2100 };
 foreach(int year in years)
 {
     if (IfYearIsLeap(year))
@@ -9,5 +9,10 @@ foreach(int year in years)
 
 bool IfYearIsLeap(int  year)
 {
-    return year % 4 == 0;
+    if(year % 4 == 0)
+    {
+        if(year % 100 == 0) { return year % 400 == 0; }
+        return true;
+    }
+    return false;
 }
